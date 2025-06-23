@@ -29,10 +29,10 @@ const About = () => {
             <Card className="border-0 shadow-none bg-transparent">
               <CardContent className="p-0 space-y-6">
                 <p className="text-lg text-muted-foreground">
-                  5년 경력의 풀스택 개발자로, 사용자 중심의 혁신적인 웹 애플리케이션을 만드는 것을 좋아합니다.
+                  2년 경력의 크로스플랫폼 앱 개발자로, 사용자 중심의 혁신적인 애플리케이션을 만드는 것을 좋아합니다.
                 </p>
                 <p className="text-lg text-muted-foreground">
-                  React, Node.js, TypeScript를 주로 사용하며, 클린 코드와 최적화된 성능을 추구합니다.
+                  Flutter를 주로 사용하며, 클린 코드와 최적화된 성능을 추구합니다.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   {features.map((feature) => {
