@@ -5,11 +5,11 @@ import { Button } from '../ui/button'
 const Hero = ({ scrollToSection }) => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-transparent to-pink-600/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-transparent to-cyan-600/20 animate-gradient"></div>
       <div className="relative z-10 text-center px-4">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
           안녕하세요, 저는
-          <span className="block bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <span className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
             김진현 입니다
           </span>
         </h1>
@@ -23,14 +23,18 @@ const Hero = ({ scrollToSection }) => {
             </a>
           </Button>
           <Button asChild variant="outline" size="icon" className="rounded-full">
-            <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/%EC%A7%84%ED%98%84-%EA%B9%80-377784329/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
               <Linkedin className="h-5 w-5" />
             </a>
           </Button>
-          <Button asChild variant="outline" size="icon" className="rounded-full">
-            <a href="mailto:hello@example.com" aria-label="Email">
-              <Mail className="h-5 w-5" />
-            </a>
+          <Button 
+            variant="outline" 
+            size="icon" 
+            className="rounded-full"
+            onClick={() => window.location.href = 'mailto:jinhyeon-dev@gmail.com'}
+            aria-label="Email"
+          >
+            <Mail className="h-5 w-5" />
           </Button>
         </div>
         <button

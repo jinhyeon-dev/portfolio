@@ -8,7 +8,8 @@
       "Bash(mkdir:*)",
       "Bash(npm start)",
       "Bash(npm run deploy:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(mv:*)"
     ],
     "deny": []
   }

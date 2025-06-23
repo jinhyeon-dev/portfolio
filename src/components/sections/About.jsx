@@ -1,26 +1,27 @@
 import React from 'react'
 import { Code2, Palette, Zap, Users } from 'lucide-react'
 import { Card, CardContent } from '../ui/card'
+import profileImage from '../../assets/images/profile.jpg'
 
 const About = () => {
   const features = [
-    { icon: Code2, label: '클린 코드', color: 'text-purple-400' },
-    { icon: Palette, label: 'UI/UX 디자인', color: 'text-pink-400' },
-    { icon: Zap, label: '성능 최적화', color: 'text-yellow-400' },
-    { icon: Users, label: '팀 협업', color: 'text-blue-400' }
+    { icon: Code2, label: '클린 코드', color: 'text-blue-500' },
+    { icon: Palette, label: 'UI/UX 디자인', color: 'text-sky-400' },
+    { icon: Zap, label: '성능 최적화', color: 'text-cyan-400' },
+    { icon: Users, label: '팀 협업', color: 'text-indigo-400' }
   ]
 
   return (
     <section id="about" className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+        <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
           About Me
         </h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
             <img
-              src="/images/증명사진.JPG"
+              src={profileImage}
               alt="Profile"
               className="relative rounded-lg w-full"
             />

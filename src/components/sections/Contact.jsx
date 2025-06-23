@@ -9,7 +9,7 @@ const Contact = ({ darkMode }) => {
       <div className="max-w-4xl mx-auto">
         <Card className="text-center border-0 bg-transparent shadow-none">
           <CardHeader>
-            <CardTitle className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <CardTitle className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Get In Touch
             </CardTitle>
             <CardDescription className="text-xl">
@@ -17,7 +17,7 @@ const Contact = ({ darkMode }) => {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Button asChild size="lg" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600">
+            <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600">
               <a href="mailto:hello@example.com" className="inline-flex items-center gap-2">
                 <Mail className="h-5 w-5" />
                 <span>이메일 보내기</span>

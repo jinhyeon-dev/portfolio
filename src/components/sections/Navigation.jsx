@@ -17,14 +17,12 @@ const Navigation = ({
   return (
     <nav className={cn(
       "fixed top-0 w-full z-50 transition-all duration-300",
-      scrolled && "backdrop-blur-md border-b",
-      scrolled && darkMode && "bg-background/90 border-border",
-      scrolled && !darkMode && "bg-background/90 border-border"
+      scrolled ? "backdrop-blur-md border-b bg-background/80 border-border" : "bg-transparent"
     )}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Portfolio
             </span>
           </div>
@@ -39,7 +37,7 @@ const Navigation = ({
                       onClick={() => scrollToSection(item.id)}
                       className={cn(
                         "cursor-pointer",
-                        activeSection === item.id && "text-purple-400"
+                        activeSection === item.id && "text-blue-400"
                       )}
                     >
                       {item.label}
@@ -89,8 +87,8 @@ const Navigation = ({
                 className={cn(
                   "block w-full text-left px-3 py-2 rounded-md transition-colors",
                   activeSection === item.id
-                    ? "text-purple-400 bg-purple-400/10"
-                    : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                    ? "text-blue-400 bg-blue-400/10"
+                    : "text-muted-foreground hover:text-blue-400 hover:bg-blue-400/10"
                 )}
               >
                 {item.label}

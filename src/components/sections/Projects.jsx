@@ -3,16 +3,17 @@ import { ExternalLink, Github } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card'
 import { Badge } from '../ui/badge'
 import { Button } from '../ui/button'
+import gbswTodayImage from '../../assets/images/gbsw_today.png'
 
 const Projects = ({ darkMode }) => {
   const projects = [
     {
-      title: '이커머스 플랫폼',
-      description: 'Next.js와 Stripe를 활용한 풀스택 온라인 쇼핑몰',
-      tech: ['Next.js', 'TypeScript', 'Prisma', 'Tailwind'],
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
-      link: '#',
-      github: '#'
+      title: 'GBSW 급식 자동 스토리 봇',
+      description: '인스타그램에 매일 6시에 자동적으로 찾아가는 급식 알리미 서비스',
+      tech: ['Python', 'NEIS OpenAPI', 'Pillow', 'instagrapi', 'AWS'],
+      image: gbswTodayImage,
+      link: 'https://www.instagram.com/gbsw_today/',
+      github: 'https://github.com/jinhyeon-dev/gbsw_today'
     },
     {
       title: '실시간 채팅 앱',
@@ -35,7 +36,7 @@ const Projects = ({ darkMode }) => {
   return (
     <section id="projects" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+        <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
           Projects
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

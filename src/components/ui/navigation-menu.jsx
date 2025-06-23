@@ -32,15 +32,17 @@ const NavigationMenuItem = React.forwardRef(({ className, ...props }, ref) => (
 ))
 NavigationMenuItem.displayName = "NavigationMenuItem"
 
-const NavigationMenuLink = React.forwardRef(({ className, ...props }, ref) => (
+const NavigationMenuLink = React.forwardRef(({ className, children, ...props }, ref) => (
   <a
     ref={ref}
     className={cn(
-      "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50",
+      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-blue-500/10 hover:text-blue-400 focus:bg-blue-500/10 focus:text-blue-400 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-blue-500/20 data-[active]:text-blue-400 data-[state=open]:bg-blue-500/20",
       className
     )}
     {...props}
-  />
+  >
+    {children}
+  </a>
 ))
 NavigationMenuLink.displayName = "NavigationMenuLink"
 
