@@ -1,6 +1,5 @@
 import React from 'react'
 import { Mail, Github, Linkedin, Instagram, MapPin, Phone, Copy } from 'lucide-react'
-import { Button } from '../ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card'
 import { useScrollAnimation } from '../../hooks/useScrollAnimation'
 import { useToast } from '../ui/toast'
@@ -35,8 +34,8 @@ const Contact = () => {
       value: "jinhyeon.dev@gmail.com",
       onClick: () => copyToClipboard('jinhyeon.dev@gmail.com'),
       isEmail: true,
-      color: "from-blue-500 to-blue-600",
-      hoverColor: "hover:from-blue-600 hover:to-blue-700"
+      color: "from-orange-500 to-orange-600",
+      hoverColor: "hover:from-orange-600 hover:to-orange-700"
     },
     {
       icon: Github,
@@ -76,7 +75,7 @@ const Contact = () => {
     {
       icon: Phone,
       label: "상태",
-      value: "프리랜스 프로젝트 진행 중"
+      value: "현장실습 진행중입니다."
     }
   ];
 

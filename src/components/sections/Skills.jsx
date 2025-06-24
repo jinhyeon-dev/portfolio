@@ -4,15 +4,17 @@ import { Card, CardContent } from '../ui/card'
 
 const Skills = () => {
   const skillCategories = {
-    "Languages": ["Dart", "JavaScript", "TypeScript", "Python"],
+    "Languages": ["Dart", "JavaScript", "Python", "Java", "C"],
     "Mobile": ["Flutter", "React Native", "Android", "iOS"],
-    "Frontend": ["React", "Next.js", "Tailwind CSS", "HTML/CSS"],
-    "Backend": ["FastAPI", "Node.js", "PostgreSQL", "Firebase"],
-    "Tools": ["Git", "Docker", "AWS", "VS Code", "Figma"]
+    "Frontend": ["React", "HTML/CSS",],
+    "Backend": ["FastAPI", "Spring Boot"],
+    "Database": ["PostgreSQL", "MySQL", "SQLite"],
+    "Cloud & DevOps": ["GCP", "AWS", "Firebase", "Docker",],
+    "Tools & Platforms": ["Git", "GitHub", "VS Code", "Figma", "Supabase",]
   }
 
-  const expertSkills = ["Flutter", "Dart", "React", "Tailwind CSS", "Git"]
-  const learningSkills = ["GraphQL", "Kubernetes", "React Query", "Prisma"]
+  const expertSkills = ["Flutter", "Dart", "React", "FastAPI", "Git", "AWS", "Firebase"]
+  const learningSkills = ["GraphQL", "Spring Boot", "Kotlin", "Swift", "Next.js"]
 
   return (
     <section id="skills" className="py-24 bg-muted/30">

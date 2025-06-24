@@ -95,11 +95,6 @@ const Portfolio = () => {
       const navHeight = 56; // 네비게이션 바 높이
       let offset = navHeight;
       
-      // 프로젝트 섹션은 추가 오프셋 적용
-      if (id === 'projects') {
-        offset += 180; // 80px 더 위에서 멈춤
-      }
-      
       const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - offset;
       

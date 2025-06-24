@@ -2,56 +2,82 @@ import React from "react";
 import { Badge } from "../ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
-import profileImage from '../../assets/images/profile.jpg'
+import { Award, Calendar, MapPin, Users } from "lucide-react";
 
 const About = () => {
   const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.3 });
   const [introRef, introVisible] = useScrollAnimation({ threshold: 0.2 });
   const [experienceRef, experienceVisible] = useScrollAnimation({ threshold: 0.1 });
-  const [valuesRef, valuesVisible] = useScrollAnimation({ threshold: 0.2 });
-  const [interestsRef, interestsVisible] = useScrollAnimation({ threshold: 0.2 });
-  const [quoteRef, quoteVisible] = useScrollAnimation({ threshold: 0.3 });
+  const [certificationsRef, certificationsVisible] = useScrollAnimation({ threshold: 0.2 });
   const experiences = [
     {
-      period: "2024.03 - 현재",
-      title: "모바일 앱 개발 프리랜서",
-      description: "스타트업과 개인 사업자를 위한 맞춤형 앱 개발",
+      period: "2025.08.18 - 2025.11.18",
+      title: "대구 더블엠소셜컴퍼니 현장실습생",
+      description: "현장실습",
       highlights: [
-        "Flutter 앱 5개 출시",
-        "평균 평점 4.8/5.0",
-        "MAU 10,000+ 달성",
       ],
       type: "current"
     },
     {
-      period: "2023.06 - 2024.02",
-      title: "교내 프로그래밍 동아리 리더",
-      description: "15명 규모 동아리 운영 및 멘토링",
+      period: "2024.08.12 - 현재",
+      title: "USLASH 단체 창립 멤버",
+      description: "창업과 IT 분야의 학생 · 청년 성장을 지원합니다.",
       highlights: [
-        "주간 세미나 진행",
-        "해커톤 3회 주최",
-        "신입생 교육 프로그램 개발",
+        "U/CON 2025 주최",
+        "U/THON 2025 예정",
       ],
-      type: "past"
+      type: "current"
     },
     {
-      period: "2022.09 - 현재",
+      period: "2025.01 - 현재",
       title: "오픈소스 기여자",
       description: "Flutter 생태계 패키지 개발 및 기여",
       highlights: [
         "pub.dev 패키지 2개 배포",
-        "GitHub 스타 200+",
-        "이슈 30+ 해결",
+        "월 100명 이상 사용",
       ],
       type: "current"
     },
+    {
+      period: "2024.04.01 - 2024.07.11",
+      title: "교내 2024년 1학기 캡스톤",
+      description: "장려상",
+      highlights: [
+        "GITMATE - GitHub 통합 메신저 개발",
+        "대구 ICT 융합엑스포 전시",
+      ],
+      type: "past"
+    },
   ];
 
-  const values = [
-    "사용자가 정말 필요로 하는 것을 만드는 개발자",
-    "코드 한 줄에도 이유가 있는 개발자",
-    "팀과 함께 성장하는 개발자",
-    "매일 1% 더 나아지는 개발자",
+  const certifications = [
+    {
+      name: "정보처리산업기능사",
+      issuer: "한국산업인력공단(HRD)",
+      date: "2024.12.24",
+      description: "소프트웨어 개발 및 데이터베이스 관리 능력 인증",
+      status: "취득"
+    },
+    {
+      name: "아마추어무선기사",
+      issuer: "한국방송통신전파진흥원(KCA)",
+      date: "2024.06.18",
+      description: "컴퓨터 활용 및 문서 작성 능력 인증",
+      status: "취득"
+    },
+  ];
+
+  const personalInfo = [
+    {
+      icon: MapPin,
+      label: "위치",
+      value: "경상북도, 대한민국"
+    },
+    {
+      icon: Users,
+      label: "상태",
+      value: "현장실습 진행중입니다."
+    }
   ];
 
   return (
@@ -74,47 +100,74 @@ const About = () => {
           {/* 소개 */}
           <Card 
             ref={introRef}
-            className={`bg-gradient-to-br from-background to-muted/30 border-0 shadow-sm transition-all duration-700 ${
+            className={`transition-all duration-700 ${
               introVisible 
                 ? 'opacity-100 translate-y-0' 
                 : 'opacity-0 translate-y-12'
             }`}
           >
             <CardContent className="p-8">
-              <div className="flex items-start gap-6">
-                <div className="w-20 h-20 rounded-full overflow-hidden ring-2 ring-primary/20">
-                  <img 
-                    src={profileImage}
-                    alt="김진현 프로필"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="flex-1 space-y-4">
+              <div className="flex flex-col md:flex-row gap-8 items-start">
+                {/* 오른쪽: 정보 */}
+                <div className="flex-1 text-center md:text-left space-y-6">
+                  {/* 기본 정보 */}
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">김진현 | Flutter Developer</h3>
-                    <p className="text-muted-foreground">
-                      경북소프트웨어마이스터고등학교 재학 | 
-                      <a
-                        href="https://uslash.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary hover:text-primary/80 transition-colors underline ml-1"
-                      >
-                        USLASH
-                      </a>
-                      {" "}활동
+                    <h3 className="text-3xl font-bold mb-2">김진현</h3>
+                    <p className="text-xl text-primary font-medium mb-4">Flutter Developer</p>
+                    
+                    <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
+                      <Badge variant="secondary">경북소프트웨어마이스터고등학교</Badge>
+                      <Badge variant="outline">
+                        <a
+                          href="https://uslash.org"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-primary transition-colors"
+                        >
+                          USLASH 활동
+                        </a>
+                      </Badge>
+                    </div>
+                    
+                    {/* 개인 정보 */}
+                    <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-muted-foreground">
+                      {personalInfo.map((info, index) => (
+                        <div key={index} className="flex items-center gap-1">
+                          <info.icon className="h-4 w-4" />
+                          <span>{info.value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* 소개글 */}
+                  <div>
+                    <p className="text-muted-foreground leading-relaxed">
+                      안녕하세요! 도전을 즐기며 크로스플랫폼 프레임워크인 <strong>Flutter</strong>로 서비스를 만드는, 
+                      앱에 진심인 개발자입니다.
                     </p>
                   </div>
-                  <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
-                    <p>
-                      🚀 도전을 즐기며 크로스플랫폼 프레임워크인 Flutter로 서비스를 만드는, 앱에 진심인 개발자입니다.
-                    </p>
-                    <p>
-                      💡 처음 Flutter로 앱을 만들었을 때, 제가 만든 앱이 누군가의 일상에 도움이 된다는 사실에 큰 보람을 느꼈습니다.
-                    </p>
-                    <p>
-                      🎯 현재는 Flutter와 React Native를 활용한 크로스플랫폼 개발에 집중하며, 풀스택 개발자로 성장하고 있습니다.
-                    </p>
+                  
+                  {/* 핵심 가치 - 간단하게 */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <span className="text-lg">🚀</span>
+                      <span className="text-sm text-muted-foreground">
+                        도전을 두려워하지 않는 <strong>그로스 마인드셋</strong>
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-lg">💡</span>
+                      <span className="text-sm text-muted-foreground">
+                        끝없는 학습을 추구하는 <strong>헝그리 정신</strong>
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-lg">🎯</span>
+                      <span className="text-sm text-muted-foreground">
+                        <strong>사용자 중심</strong>의 서비스 개발
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -184,91 +237,61 @@ const About = () => {
             </div>
           </div>
 
-          {/* 가치관 */}
-          <Card 
-            ref={valuesRef}
-            className={`transition-all duration-700 delay-300 ${
-              valuesVisible 
+          {/* 자격증 */}
+          <div 
+            ref={certificationsRef}
+            className={`transition-all duration-700 delay-400 ${
+              certificationsVisible 
                 ? 'opacity-100 translate-y-0' 
                 : 'opacity-0 translate-y-12'
             }`}
           >
-            <CardHeader>
-              <CardTitle>개발자로서의 가치관</CardTitle>
-              <CardDescription>저를 움직이는 네 가지 원칙</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {values.map((value, index) => (
-                  <div 
-                    key={index} 
-                    className={`flex items-start gap-3 p-3 rounded-lg hover:bg-muted/50 transition-all duration-500 ${
-                      valuesVisible 
-                        ? 'opacity-100 translate-x-0' 
-                        : 'opacity-0 translate-x-4'
-                    }`}
-                    style={{
-                      transitionDelay: valuesVisible ? `${index * 100 + 400}ms` : '0ms'
-                    }}
-                  >
-                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-primary text-sm font-bold">{index + 1}</span>
+            <h3 className="text-2xl font-semibold mb-8">Certifications</h3>
+            <div className="grid gap-4 md:grid-cols-2">
+              {certifications.map((cert, index) => (
+                <Card 
+                  key={index}
+                  className={`transition-all duration-500 hover:shadow-md hover:-translate-y-1 ${
+                    certificationsVisible 
+                      ? 'opacity-100 translate-y-0' 
+                      : 'opacity-0 translate-y-8'
+                  }`}
+                  style={{
+                    transitionDelay: certificationsVisible ? `${index * 200}ms` : '0ms'
+                  }}
+                >
+                  <CardHeader className="pb-3">
+                    <div className="flex items-start justify-between">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                          <Award className="h-4 w-4 text-primary" />
+                        </div>
+                        <Badge 
+                          variant="outline" 
+                          className="text-xs bg-green-50 text-green-700 border-green-200 dark:bg-green-900/20 dark:text-green-400 dark:border-green-800"
+                        >
+                          {cert.status}
+                        </Badge>
+                      </div>
                     </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{value}</p>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* 현재 관심사 */}
-          <Card 
-            ref={interestsRef}
-            className={`bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/10 transition-all duration-700 delay-400 ${
-              interestsVisible 
-                ? 'opacity-100 translate-y-0' 
-                : 'opacity-0 translate-y-12'
-            }`}
-          >
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <span className="text-lg">🎯</span>
-                현재 관심 분야
-              </CardTitle>
-              <CardDescription>지금 가장 집중하고 있는 기술과 방향성</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid gap-4 md:grid-cols-3">
-                <div className="p-4 rounded-lg border border-border/50 hover:border-primary/20 transition-colors">
-                  <h4 className="font-medium mb-2 flex items-center gap-2">
-                    <span className="text-sm">⚡</span>
-                    기술적 도전
-                  </h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    마이크로서비스 아키텍처와 서버리스 환경에서의 앱 백엔드 구축
-                  </p>
-                </div>
-                <div className="p-4 rounded-lg border border-border/50 hover:border-primary/20 transition-colors">
-                  <h4 className="font-medium mb-2 flex items-center gap-2">
-                    <span className="text-sm">👥</span>
-                    사용자 경험
-                  </h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    접근성을 고려한 디자인과 오프라인 우선 앱 개발
-                  </p>
-                </div>
-                <div className="p-4 rounded-lg border border-border/50 hover:border-primary/20 transition-colors">
-                  <h4 className="font-medium mb-2 flex items-center gap-2">
-                    <span className="text-sm">🤝</span>
-                    팀 문화
-                  </h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    효과적인 코드 리뷰 문화와 지식 공유 시스템 구축
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+                    <CardTitle className="text-lg">{cert.name}</CardTitle>
+                    <CardDescription className="text-sm">{cert.issuer}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                        <Calendar className="h-3 w-3" />
+                        {cert.date}
+                      </div>
+                      <p className="text-xs text-muted-foreground leading-relaxed">
+                        {cert.description}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
