@@ -52,7 +52,7 @@ const About = () => {
 
   const certifications = [
     {
-      name: "정보처리산업기능사",
+      name: "정보처리산업기사",
       issuer: "한국산업인력공단(HRD)",
       date: "2024.12.24",
       description: "소프트웨어 개발 및 데이터베이스 관리 능력 인증",
